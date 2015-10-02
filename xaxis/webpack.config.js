@@ -17,7 +17,7 @@ module.exports = [{
   name: 'coreComponent',
   devtool: ENV ? "source-map": '',
   entry: {
-    xaxis_garbage: './es6/xaxis_garbage.jsx'
+    xaxis_garbage: './es6/xaxis_garbage.js'
   },
 
   output: {
@@ -28,7 +28,7 @@ module.exports = [{
   module: {
     loaders: [
       {
-        test: [/\.jsx$/],
+        test: [/\.js$/],
         loaders: ["react-hot", "babel-loader?stage=0"],
       },
       {
@@ -56,7 +56,7 @@ module.exports = [{
   name: 'coreComponent-es5',
   devtool: ENV ? "source-map": '',
   entry: {
-    xaxis_garbage: './es5/xaxis_garbage.jsx'
+    xaxis_garbage: './es5/xaxis_garbage.js'
   },
 
   output: {

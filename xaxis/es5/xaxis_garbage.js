@@ -10,7 +10,7 @@ var Xaxis = require('react-d3-core').Xaxis;
   var parseDate = d3.time.format("%YM%m").parse;
 
   // setting you svg width
-  var width = 960,
+  var width = 500,
     // setting your svg height
     height = 100,
     // setting your margins of your svg

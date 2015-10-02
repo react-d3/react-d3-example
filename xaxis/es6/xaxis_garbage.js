@@ -16,7 +16,7 @@ import {
   const parseDate = d3.time.format("%YM%m").parse;
 
   // setting you svg width
-  const width = 960,
+  const width = 500,
     // setting your svg height
     height = 100,
     // setting your margins of your svg

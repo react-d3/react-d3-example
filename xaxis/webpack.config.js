@@ -56,7 +56,8 @@ module.exports = [{
   name: 'coreComponent-es5',
   devtool: ENV ? "source-map": '',
   entry: {
-    xaxis_garbage: './es5/xaxis_garbage.js'
+    xaxis_garbage: './es5/xaxis_garbage.js',
+    xaxis_click: './es5/xaxis_click.js'
   },
 
   output: {

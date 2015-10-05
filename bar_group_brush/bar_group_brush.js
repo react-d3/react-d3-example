@@ -19,7 +19,7 @@ var BarGroupBrush = require('react-d3-brush').BarGroupBrush;
     height = 300,
     margins = {top: 20, right: 50, bottom: 20, left: 50},
     id = "test-chart",
-    title = "Bar Group Chart",
+    title = "Bar Group Chart With Brush",
     svgClassName = "test-chart-class",
     titleClassName = "test-chart-title-class",
     legendClassName = "test-legend",
@@ -85,7 +85,7 @@ var BarGroupBrush = require('react-d3-brush').BarGroupBrush;
     yTickOrient = 'right',
     yRange = [height - margins.top - margins.bottom, 0],
     // y axis domain, set your min and max.
-    yDomain = [0, d3.max(generalChartData, function(d) { return d3.max(d.ages, (d) => { return d.value; }); })],
+    yDomain = [0, d3.max(generalChartData, function(d) { return d3.max(d.ages, function(d) { return d.value; }); })],
     yScale = 'linear',
     yAxisClassName = 'y-axis',
     yLabel = "Population",

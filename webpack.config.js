@@ -17,13 +17,18 @@ module.exports = [{
   name: 'coreComponent-es5',
   devtool: ENV ? "source-map": '',
   entry: {
+    chart: './chart/chart.js',
+    grid: './grid/grid.js',
     xaxis_garbage: './xaxis/es5/xaxis_garbage.js',
     xaxis_click: './xaxis/es5/xaxis_click.js',
+    yaxis_garbage: './yaxis/yaxis_garbage.js',
     legend_click: './legend/legend_click.jsx',
+    legend: './legend/legend.js',
     line_garbage: './line/es5/line_garbage.js',
     pie_tooltip: './pie_tooltip/pie_tooltip.js',
     bar_group_brush: './bar_group_brush/bar_group_brush.js',
     bar_stack_zoom: './bar_stack_zoom/bar_stack_zoom.js'
+
   },
 
   output: {

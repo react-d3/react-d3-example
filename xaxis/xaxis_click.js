@@ -5,7 +5,7 @@ var Xaxis = require('react-d3-core').Xaxis;
 
 (function() {
   // load your general data, for building xDomain.
-  var chartData = require("dsv?delimiter=,!../../data/garbage.csv");
+  var chartData = require("dsv?delimiter=,!../data/garbage.csv");
   // your date format, use for parsing
   var parseDate = d3.time.format("%YM%m").parse;
 

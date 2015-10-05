@@ -20,7 +20,8 @@ module.exports = [{
     xaxis_garbage: './xaxis/es5/xaxis_garbage.js',
     xaxis_click: './xaxis/es5/xaxis_click.js',
     legend_click: './legend/legend_click.jsx',
-    line_garbage: './line/es5/line_garbage.js'
+    line_garbage: './line/es5/line_garbage.js',
+    pie_tooltip: './pie_tooltip/pie_tooltip.js'
   },
 
   output: {

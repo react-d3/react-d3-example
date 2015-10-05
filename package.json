@@ -16,7 +16,7 @@
     "react-d3-brush": "^0.2.3",
     "react-d3-core": "^0.2.0",
     "react-d3-tooltip": "^0.2.0",
-    "react-d3-zoom": "^0.2.0"
+    "react-d3-zoom": "^0.2.2"
   },
   "devDependencies": {
     "babel-loader": "^5.3.2",

@@ -22,7 +22,8 @@ module.exports = [{
     legend_click: './legend/legend_click.jsx',
     line_garbage: './line/es5/line_garbage.js',
     pie_tooltip: './pie_tooltip/pie_tooltip.js',
-    bar_group_brush: './bar_group_brush/bar_group_brush.js'
+    bar_group_brush: './bar_group_brush/bar_group_brush.js',
+    bar_stack_zoom: './bar_stack_zoom/bar_stack_zoom.js'
   },
 
   output: {

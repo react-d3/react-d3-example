@@ -1,7 +1,7 @@
 "use strict";
 
 var React = require('react');
-var BarGroupBrush = require('react-d3-brush').BarGroupBrush;
+var BarStackZoom = require('react-d3-zoom').BarStackZoom;
 
 (function() {
   // loading data
@@ -12,22 +12,25 @@ var BarGroupBrush = require('react-d3-brush').BarGroupBrush;
 
   // add values in fields use for finding maximum value of the chart, see yDomain prop.
   generalChartData.forEach(function(d) {
-    d.ages = ageNames.map(function(name) { return {name: name, value: +d[name]}; });
+    var y0 = 0;
+    d.ages = ageNames.map(function(name) { return {name: name, y0: y0, y1: y0 += +d[name]}; });
+    d.total = d.ages[d.ages.length - 1].y1;
   });
 
   var width = 700,
-    height = 300,
-    margins = {top: 20, right: 50, bottom: 20, left: 50},
+    height = 400,
+    margins = {top: 50, right: 50, bottom: 50, left: 50},
     id = "test-chart",
-    title = "Bar Group Chart",
+    title = "Bar Stack Chart",
     svgClassName = "test-chart-class",
     titleClassName = "test-chart-title-class",
     legendClassName = "test-legend",
     legendPosition = 'right',
-    labelOffset = 30,
     showLegend = true,
     showXAxis = true,
     showYAxis = true,
+    showXGrid = true,
+    showYGrid = true,
     // what fields you want to build in the chart
     // field is for the field in your csv field
     // name is for the name you want to show in your legend.
@@ -77,27 +80,31 @@ var BarGroupBrush = require('react-d3-brush').BarGroupBrush;
     xAxisClassName = 'x-axis',
     xLabel = "Age",
     xLabelPosition = 'bottom',
+    xTickPadding = 3,
+    xInnerTickSize = 6,
+    xOuterTickSize = 6,
     // y axis accessor
     y = function(d) {
       return +d;
     },
     yOrient = 'left',
-    yTickOrient = 'right',
+    yTickOrient = 'left',
     yRange = [height - margins.top - margins.bottom, 0],
     // y axis domain, set your min and max.
-    yDomain = [0, d3.max(generalChartData, function(d) { return d3.max(d.ages, (d) => { return d.value; }); })],
+    yDomain = [0, d3.max(generalChartData, function(d) { return d.total; })],
     yScale = 'linear',
     yAxisClassName = 'y-axis',
     yLabel = "Population",
     // y tick format
     yTickFormat = d3.format(".2s"),
     yLabelPosition = 'left',
-    categoricalColors = d3.scale.category10(),
-    // your brush height
-    brushHeight = 100;
+    yTickPadding = 4,
+    yInnerTickSize = 6,
+    yOuterTickSize = 6
+
 
   React.render(
-    <BarGroupBrush
+    <BarStackZoom
       title= {title}
       data= {generalChartData}
       width= {width}
@@ -105,36 +112,42 @@ var BarGroupBrush = require('react-d3-brush').BarGroupBrush;
       id= {id}
       margins= {margins}
       svgClassName= {svgClassName}
-      labelOffset = {labelOffset}
       titleClassName= {titleClassName}
       yAxisClassName= {yAxisClassName}
       xAxisClassName= {xAxisClassName}
       legendClassName= {legendClassName}
       legendPosition= {legendPosition}
-      categoricalColors= {categoricalColors}
+      categoricalColors= {d3.scale.category10()}
       chartSeries = {chartSeries}
       showLegend= {showLegend}
       showXAxis= {showXAxis}
       showYAxis= {showYAxis}
       x= {x}
+      showXGrid= {showXGrid}
       xDomain= {xDomain}
       xRangeRoundBands= {xRangeRoundBands}
       xScale= {xScale}
       xOrient= {xOrient}
       xTickOrient= {xTickOrient}
+      xTickPadding = {xTickPadding}
+      xInnerTickSize = {xInnerTickSize}
+      xOuterTickSize = {xOuterTickSize}
       xLabel = {xLabel}
       xLabelPosition = {xLabelPosition}
       y= {y}
+      showYGrid= {showYGrid}
       yOrient= {yOrient}
       yRange= {yRange}
       yDomain= {yDomain}
       yScale= {yScale}
       yTickOrient= {yTickOrient}
+      yTickPadding = {yTickPadding}
+      yInnerTickSize = {yInnerTickSize}
+      yOuterTickSize = {yOuterTickSize}
       yTickFormat= {yTickFormat}
       yLabel = {yLabel}
       yLabelPosition = {yLabelPosition}
-      brushHeight= {brushHeight}
     />
-  , document.getElementById('data_brush_bar_group')
+  , document.getElementById('data_zoom_bar_stack')
   )
 })()

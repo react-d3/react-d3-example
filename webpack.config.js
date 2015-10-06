@@ -18,6 +18,7 @@ module.exports = [{
   devtool: ENV ? "source-map": '',
   entry: {
     chart: './chart/chart.js',
+    donut: './donut/donut.js',
     grid: './grid/grid.js',
     xaxis_garbage: './xaxis/xaxis_garbage.js',
     xaxis_click: './xaxis/xaxis_click.js',
@@ -25,7 +26,15 @@ module.exports = [{
     legend_click: './legend/legend_click.jsx',
     legend: './legend/legend.js',
     line_garbage: './line/line_garbage.js',
+    line_multi_garbage: './line_multi/line_multi_garbage.js',
+    scatter_garbage: './scatter/scatter_garbage.js',
+    area_garbage: './area/area_garbage.js',
+    area_stack: './area_stack/area_stack.js',
+    pie: './pie/pie.js',
     pie_tooltip: './pie_tooltip/pie_tooltip.js',
+    bar: './bar/bar.js',
+    bar_group: './bar_group/bar_group.js',
+    bar_stack: './bar_stack/bar_stack.js',
     bar_group_brush: './bar_group_brush/bar_group_brush.js',
     bar_stack_zoom: './bar_stack_zoom/bar_stack_zoom.js'
 

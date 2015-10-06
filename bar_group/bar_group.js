@@ -75,7 +75,7 @@ var BarGroupChart = require('react-d3-basic').BarGroupChart;
     yOrient = 'left',
     yTickOrient = 'right',
     yRange = [height - margins.top - margins.bottom, 0],
-    yDomain = [0, d3.max(generalChartData, function(d) { return d3.max(d.ages, (d) => { return d.value; }); })],
+    yDomain = [0, d3.max(generalChartData, function(d) { return d3.max(d.ages, function(d) { return d.value; }); })],
     yScale = 'linear',
     yAxisClassName = 'y-axis',
     yLabel = "Population",

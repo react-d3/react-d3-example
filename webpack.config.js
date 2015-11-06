@@ -5,8 +5,8 @@ var path            = require('path'),
   nodeModulesPath = path.join(__dirname, 'node_modules');
 
 var js_root_detail = './detail/';
-var js_detail_dist = path.join(__dirname, './dist/origin');
-var js_detail_dist_min = path.join(__dirname, './dist/min');
+var js_detail_dist = path.join(__dirname, './dist/detail/origin');
+var js_detail_dist_min = path.join(__dirname, './dist/detail/min');
 
 // 0 stands for development, 1 stands for production
 // for development mode: NODE_ENV=0 webpack
@@ -60,7 +60,7 @@ module.exports = [{
   },
 
   output: {
-    path: ENV ? js_detail_dist_min + '/es5'  : js_detail_dist + '/es5',
+    path: ENV ? js_detail_dist_min  : js_detail_dist,
     filename: ENV ? '[name].min.js': '[name].js'
   },
 

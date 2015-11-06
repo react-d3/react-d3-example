@@ -1,7 +1,9 @@
 "use strict";
 
 var React = require('react');
-var AreaStackZoom = require('react-d3-zoom').AreaStackZoom;
+var ReactDOM = require('react-dom');
+var Chart = require('react-d3-core').Chart;
+var AreaStackChart = require('react-d3-basic').AreaStackChart;
 
 (function() {
   var generalChartData = require('dsv?delimiter=,!../data/stack_test.csv')
@@ -15,9 +17,7 @@ var AreaStackZoom = require('react-d3-zoom').AreaStackZoom;
     title = "Stack Area Chart",
     svgClassName = "test-chart-class",
     titleClassName = "test-chart-title-class",
-    legendClassName = "test-legend",
     legendPosition = "right",
-    showLegend = true,
     showXAxis = true,
     showYAxis = true,
     chartSeries = [
@@ -54,8 +54,16 @@ var AreaStackZoom = require('react-d3-zoom').AreaStackZoom;
     yScale = 'linear',
     yAxisClassName = 'y-axis';
 
-  React.render(
-      <AreaStackZoom
+  ReactDOM.render(
+    <Chart
+      title={title}
+      id={id}
+      width={width}
+      height={height}
+      legendPosition= {legendPosition}
+      chartSeries= {chartSeries}
+      >
+      <AreaStackChart
         title= {title}
         data= {generalChartData}
         width= {width}
@@ -66,11 +74,8 @@ var AreaStackZoom = require('react-d3-zoom').AreaStackZoom;
         titleClassName= {titleClassName}
         yAxisClassName= {yAxisClassName}
         xAxisClassName= {xAxisClassName}
-        legendClassName= {legendClassName}
-        legendPosition= {legendPosition}
         categoricalColors= {d3.scale.category10()}
         chartSeries = {chartSeries}
-        showLegend= {showLegend}
         showXAxis= {showXAxis}
         showYAxis= {showYAxis}
         x= {x}
@@ -87,6 +92,7 @@ var AreaStackZoom = require('react-d3-zoom').AreaStackZoom;
         yScale= {yScale}
         yTickOrient= {yTickOrient}
       />
+    </Chart>
   , document.getElementById('area-stack')
   )
 })()

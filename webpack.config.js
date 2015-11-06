@@ -4,9 +4,9 @@ var path            = require('path'),
   webpack         = require('webpack'),
   nodeModulesPath = path.join(__dirname, 'node_modules');
 
-var js_root = './';
-var js_dist = path.join(__dirname, './dist/origin');
-var js_dist_min = path.join(__dirname, './dist/min');
+var js_root_detail = './detail/';
+var js_detail_dist = path.join(__dirname, './dist/origin');
+var js_detail_dist_min = path.join(__dirname, './dist/min');
 
 // 0 stands for development, 1 stands for production
 // for development mode: NODE_ENV=0 webpack
@@ -17,50 +17,50 @@ module.exports = [{
   name: 'coreComponent-es5',
   devtool: ENV ? "source-map": '',
   entry: {
-    chart: './chart/chart.js',
-    donut: './donut/donut.js',
-    grid: './grid/grid.js',
-    xaxis_garbage: './xaxis/xaxis_garbage.js',
-    xaxis_click: './xaxis/xaxis_click.js',
-    yaxis_garbage: './yaxis/yaxis_garbage.js',
-    legend_click: './legend/legend_click.jsx',
-    legend: './legend/legend.js',
-    line_garbage: './line/line_garbage.js',
-    line_garbage_tooltip: './line_tooltip/line_garbage_tooltip.js',
-    line_garbage_brush: './line_brush/line_garbage_brush.js',
-    line_garbage_zoom: './line_zoom/line_garbage_zoom.js',
-    line_multi_garbage: './line_multi/line_multi_garbage.js',
-    line_multi_garbage_tooltip: './line_multi_tooltip/line_multi_garbage_tooltip.js',
-    line_multi_garbage_brush: './line_multi_brush/line_multi_garbage_brush.js',
-    line_multi_garbage_zoom: './line_multi_zoom/line_multi_garbage_zoom.js',
-    scatter_garbage: './scatter/scatter_garbage.js',
-    scatter_garbage_tooltip: './scatter_tooltip/scatter_garbage_tooltip.js',
-    scatter_garbage_brush: './scatter_brush/scatter_garbage_brush.js',
-    scatter_garbage_zoom: './scatter_zoom/scatter_garbage_zoom.js',
-    area_garbage: './area/area_garbage.js',
-    area_stack: './area_stack/area_stack.js',
-    area_stack_tooltip: './area_stack_tooltip/area_stack_tooltip.js',
-    area_stack_brush: './area_stack_brush/area_stack_brush.js',
-    area_stack_zoom: './area_stack_zoom/area_stack_zoom.js',
-    pie: './pie/pie.js',
-    pie_tooltip: './pie_tooltip/pie_tooltip.js',
-    bar: './bar/bar.js',
-    bar_tooltip: './bar_tooltip/bar_tooltip.js',
-    bar_brush: './bar_brush/bar_brush.js',
-    bar_zoom: './bar_zoom/bar_zoom.js',
-    bar_group: './bar_group/bar_group.js',
-    bar_group_brush: './bar_group_brush/bar_group_brush.js',
-    bar_group_tooltip: './bar_group_tooltip/bar_group_tooltip.js',
-    bar_group_zoom: './bar_group_zoom/bar_group_zoom.js',
-    bar_stack: './bar_stack/bar_stack.js',
-    bar_stack_tooltip: './bar_stack_tooltip/bar_stack_tooltip.js',
-    bar_stack_brush: './bar_stack_brush/bar_stack_brush.js',
-    bar_stack_zoom: './bar_stack_zoom/bar_stack_zoom.js'
+    chart: js_root_detail + 'chart/chart.js',
+    donut: js_root_detail + 'donut/donut.js',
+    grid: js_root_detail + 'grid/grid.js',
+    xaxis_garbage: js_root_detail + 'xaxis/xaxis_garbage.js',
+    xaxis_click: js_root_detail + 'xaxis/xaxis_click.js',
+    yaxis_garbage: js_root_detail + 'yaxis/yaxis_garbage.js',
+    legend_click: js_root_detail + 'legend/legend_click.jsx',
+    legend: js_root_detail + 'legend/legend.js',
+    line_garbage: js_root_detail + 'line/line_garbage.js',
+    line_garbage_tooltip: js_root_detail + 'line_tooltip/line_garbage_tooltip.js',
+    line_garbage_brush: js_root_detail + 'line_brush/line_garbage_brush.js',
+    line_garbage_zoom: js_root_detail + 'line_zoom/line_garbage_zoom.js',
+    line_multi_garbage: js_root_detail + 'line_multi/line_multi_garbage.js',
+    line_multi_garbage_tooltip: js_root_detail + 'line_multi_tooltip/line_multi_garbage_tooltip.js',
+    line_multi_garbage_brush: js_root_detail + 'line_multi_brush/line_multi_garbage_brush.js',
+    line_multi_garbage_zoom: js_root_detail + 'line_multi_zoom/line_multi_garbage_zoom.js',
+    scatter_garbage: js_root_detail + 'scatter/scatter_garbage.js',
+    scatter_garbage_tooltip: js_root_detail + 'scatter_tooltip/scatter_garbage_tooltip.js',
+    scatter_garbage_brush: js_root_detail + 'scatter_brush/scatter_garbage_brush.js',
+    scatter_garbage_zoom: js_root_detail + 'scatter_zoom/scatter_garbage_zoom.js',
+    area_garbage: js_root_detail + 'area/area_garbage.js',
+    area_stack: js_root_detail + 'area_stack/area_stack.js',
+    area_stack_tooltip: js_root_detail + 'area_stack_tooltip/area_stack_tooltip.js',
+    area_stack_brush: js_root_detail + 'area_stack_brush/area_stack_brush.js',
+    area_stack_zoom: js_root_detail + 'area_stack_zoom/area_stack_zoom.js',
+    pie: js_root_detail + 'pie/pie.js',
+    pie_tooltip: js_root_detail + 'pie_tooltip/pie_tooltip.js',
+    bar: js_root_detail + 'bar/bar.js',
+    bar_tooltip: js_root_detail + 'bar_tooltip/bar_tooltip.js',
+    bar_brush: js_root_detail + 'bar_brush/bar_brush.js',
+    bar_zoom: js_root_detail + 'bar_zoom/bar_zoom.js',
+    bar_group: js_root_detail + 'bar_group/bar_group.js',
+    bar_group_brush: js_root_detail + 'bar_group_brush/bar_group_brush.js',
+    bar_group_tooltip: js_root_detail + 'bar_group_tooltip/bar_group_tooltip.js',
+    bar_group_zoom: js_root_detail + 'bar_group_zoom/bar_group_zoom.js',
+    bar_stack: js_root_detail + 'bar_stack/bar_stack.js',
+    bar_stack_tooltip: js_root_detail + 'bar_stack_tooltip/bar_stack_tooltip.js',
+    bar_stack_brush: js_root_detail + 'bar_stack_brush/bar_stack_brush.js',
+    bar_stack_zoom: js_root_detail + 'bar_stack_zoom/bar_stack_zoom.js'
 
   },
 
   output: {
-    path: ENV ? js_dist_min + '/es5'  : js_dist + '/es5',
+    path: ENV ? js_detail_dist_min + '/es5'  : js_detail_dist + '/es5',
     filename: ENV ? '[name].min.js': '[name].js'
   },
 

@@ -1,6 +1,7 @@
 "use strict"
 
 var React = require('react');
+var ReactDOM = require('react-dom')
 var Chart = require('react-d3-core').Chart;
 var LineChart = require('react-d3-basic').LineChart;
 
@@ -18,8 +19,6 @@ var LineChart = require('react-d3-basic').LineChart;
     title = "Taiwan refuse disposal - Incineration",
     svgClassName = "simple-area-chart",
     titleClassName = "test-chart-title-class",
-    // show legend or not
-    showLegend = true,
     // show xaxis or not
     showXAxis = true,
     // show yaxis or not
@@ -33,7 +32,10 @@ var LineChart = require('react-d3-basic').LineChart;
         field: 'incineration',
         name: 'Incineration',
         color: 'blue',
-        area: true
+        area: true,
+        style: {
+          opacity: .2
+        }
       }
     ],
     // your x accessor
@@ -62,7 +64,7 @@ var LineChart = require('react-d3-basic').LineChart;
     yLabelPosition = 'left',
     yLabel = "Amount";
 
-  React.render(
+  ReactDOM.render(
     <Chart
       title={title}
       id={id}
@@ -81,7 +83,6 @@ var LineChart = require('react-d3-basic').LineChart;
         yAxisClassName= {yAxisClassName}
         xAxisClassName= {xAxisClassName}
         chartSeries= {chartSeries}
-        showLegend= {showLegend}
         showXAxis= {showXAxis}
         showYAxis= {showYAxis}
         x= {x}

@@ -1,6 +1,7 @@
 "use strict"
 
 var React = require('react');
+var ReactDOM = require('react-dom');
 var Chart = require('react-d3-core').Chart;
 var LineChart = require('react-d3-basic').LineChart;
 
@@ -60,7 +61,7 @@ var LineChart = require('react-d3-basic').LineChart;
     yLabelPosition = 'left',
     yLabel = "Amount";
 
-  React.render(
+  ReactDOM.render(
     <Chart
       title={title}
       id={id}
@@ -68,36 +69,36 @@ var LineChart = require('react-d3-basic').LineChart;
       height={height}
       >
       <LineChart
-        title= {title}
-        data= {chartData}
-        width= {width}
-        height= {height}
-        id= {id}
-        margins= {margins}
-        svgClassName= {svgClassName}
-        titleClassName= {titleClassName}
-        yAxisClassName= {yAxisClassName}
-        xAxisClassName= {xAxisClassName}
-        chartSeries= {chartSeries}
-        showLegend= {showLegend}
-        showXAxis= {showXAxis}
-        showYAxis= {showYAxis}
-        x= {x}
-        xDomain= {xDomain}
-        xRange= {xRange}
-        xScale= {xScale}
-        xOrient= {xOrient}
-        xTickOrient= {xTickOrient}
-        xLabel = {xLabel}
-        xLabelPosition = {xLabelPosition}
-        y= {y}
-        yOrient= {yOrient}
-        yDomain= {yDomain}
-        yRange= {yRange}
-        yScale= {yScale}
-        yTickOrient= {yTickOrient}
-        yLabel = {yLabel}
-        yLabelPosition = {yLabelPosition}
+        title={title}
+        data={chartData}
+        width={width}
+        height={height}
+        id={id}
+        margins={margins}
+        svgClassName={svgClassName}
+        titleClassName={titleClassName}
+        yAxisClassName={yAxisClassName}
+        xAxisClassName={xAxisClassName}
+        chartSeries={chartSeries}
+        showLegend={showLegend}
+        showXAxis={showXAxis}
+        showYAxis={showYAxis}
+        x={x}
+        xDomain={xDomain}
+        xRange={xRange}
+        xScale={xScale}
+        xOrient={xOrient}
+        xTickOrient={xTickOrient}
+        xLabel ={xLabel}
+        xLabelPosition ={xLabelPosition}
+        y={y}
+        yOrient={yOrient}
+        yDomain={yDomain}
+        yRange={yRange}
+        yScale={yScale}
+        yTickOrient={yTickOrient}
+        yLabel={yLabel}
+        yLabelPosition={yLabelPosition}
       />
     </Chart>
   , document.getElementById('line-garbage')

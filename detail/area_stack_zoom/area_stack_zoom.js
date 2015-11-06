@@ -1,8 +1,8 @@
 "use strict";
 
 var React = require('react');
-var Chart = require('react-d3-core').Chart;
-var AreaStackChart = require('react-d3-basic').AreaStackChart;
+var ReactDOM = require('react-dom');
+var AreaStackZoom = require('react-d3-zoom').AreaStackZoom;
 
 (function() {
   var generalChartData = require('dsv?delimiter=,!../data/stack_test.csv')
@@ -55,14 +55,8 @@ var AreaStackChart = require('react-d3-basic').AreaStackChart;
     yScale = 'linear',
     yAxisClassName = 'y-axis';
 
-  React.render(
-    <Chart
-      title={title}
-      id={id}
-      width={width}
-      height={height}
-      >
-      <AreaStackChart
+  ReactDOM.render(
+      <AreaStackZoom
         title= {title}
         data= {generalChartData}
         width= {width}
@@ -77,7 +71,6 @@ var AreaStackChart = require('react-d3-basic').AreaStackChart;
         legendPosition= {legendPosition}
         categoricalColors= {d3.scale.category10()}
         chartSeries = {chartSeries}
-        showLegend= {showLegend}
         showXAxis= {showXAxis}
         showYAxis= {showYAxis}
         x= {x}
@@ -94,7 +87,6 @@ var AreaStackChart = require('react-d3-basic').AreaStackChart;
         yScale= {yScale}
         yTickOrient= {yTickOrient}
       />
-    </Chart>
   , document.getElementById('area-stack')
   )
 })()

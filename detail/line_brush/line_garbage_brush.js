@@ -1,65 +1,71 @@
-"use strict";
+"use strict"
 
 var React = require('react');
-var AreaStackBrush = require('react-d3-brush').AreaStackBrush;
+var ReactDOM = require('react-dom');
+var LineBrush = require('react-d3-brush').LineBrush;
 
 (function() {
-  var generalChartData = require('dsv?delimiter=,!../data/stack_test.csv')
-
-  var parseDate = d3.time.format("%m/%d/%y").parse;
+  // load your general data
+  var chartData = require('dsv?delimiter=,!../data/garbage.csv');
+  // your date format, use for parsing
+  var parseDate = d3.time.format("%YM%m").parse;
 
   var width = 700,
-    height = 400,
-    margins = {top: 50, right: 50, bottom: 50, left: 50},
-    id = "test-chart",
-    title = "Stack Area Chart",
-    svgClassName = "test-chart-class",
+    height = 300,
+    margins = {top: 30, right: 70, bottom: 30, left: 50},
+    id = "simple-line-chart",
+    title = "Taiwan refuse disposal",
+    svgClassName = "simple-line-chart",
     titleClassName = "test-chart-title-class",
-    legendClassName = "test-legend",
-    legendPosition = "right",
+    // show legend or not
     showLegend = true,
+    // show xaxis or not
     showXAxis = true,
+    // show yaxis or not
     showYAxis = true,
+    // chart series,
+    // field: is what field your data want to be selected
+    // name: the name of the field that display in legend
+    // color: what color is the line
     chartSeries = [
       {
-        field: "Group1",
-        name: "Group 1"
-      },
-      {
-        field: "Group2",
-        name: "Group 2"
-      },
-      {
-        field: "Group3",
-        name: "Group 3"
+        field: 'total',
+        name: 'Total',
+        color: '#ff7f0e'
       }
     ],
+    // your x accessor
     x = function(d) {
-      return parseDate(d.date);
+      return parseDate(d.month);
     },
     xOrient = 'bottom',
     xTickOrient = 'bottom',
-    xDomain = d3.extent(generalChartData, function(d) { return x(d); }),
+    xDomain = d3.extent(chartData, function(d){ return x(d) }),
     xRange = [0, width - margins.left - margins.right],
     xScale = 'time',
     xAxisClassName = 'x-axis',
-    xLabel = "Date",
+    xLabel = "Month",
+    xLabelPosition = "left",
+    // your y accessor
     y = function(d) {
       return +d;
     },
-    yOrient = 'left',
+    yOrient = 'right',
     yTickOrient = 'right',
-    yDomain = [0, 100],
+    // find max and min
+    yDomain = d3.extent(chartData, function(d) {return d.total;}),
     yRange = [height - margins.top - margins.bottom, 0],
     yScale = 'linear',
     yAxisClassName = 'y-axis',
+    yLabelPosition = 'left',
+    yLabel = "Amount",
     // your brush height
     brushHeight = 100;
 
-  React.render(
-      <AreaStackBrush
+  ReactDOM.render(
+      <LineBrush
         title= {title}
-        data= {generalChartData}
+        data= {chartData}
         width= {width}
         height= {height}
         id= {id}
@@ -68,10 +74,7 @@ var AreaStackBrush = require('react-d3-brush').AreaStackBrush;
         titleClassName= {titleClassName}
         yAxisClassName= {yAxisClassName}
         xAxisClassName= {xAxisClassName}
-        legendClassName= {legendClassName}
-        legendPosition= {legendPosition}
-        categoricalColors= {d3.scale.category10()}
-        chartSeries = {chartSeries}
+        chartSeries= {chartSeries}
         showLegend= {showLegend}
         showXAxis= {showXAxis}
         showYAxis= {showYAxis}
@@ -82,14 +85,17 @@ var AreaStackBrush = require('react-d3-brush').AreaStackBrush;
         xOrient= {xOrient}
         xTickOrient= {xTickOrient}
         xLabel = {xLabel}
+        xLabelPosition = {xLabelPosition}
         y= {y}
         yOrient= {yOrient}
         yDomain= {yDomain}
         yRange= {yRange}
         yScale= {yScale}
         yTickOrient= {yTickOrient}
+        yLabel = {yLabel}
+        yLabelPosition = {yLabelPosition}
         brushHeight= {brushHeight}
       />
-  , document.getElementById('area-stack')
+  , document.getElementById('line-garbage')
   )
 })()

@@ -1,3 +1,4 @@
 node_modules
 dist/detail/origin
+dist/simple/origin
 npm_debug.log

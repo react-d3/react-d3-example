@@ -81,6 +81,14 @@ module.exports = [{
     extensions: ['', '.webpack.js', '.web.js', '.js', '.jsx']
   },
 
+  externals: {
+    //don't bundle the 'react' npm package with our bundle.js
+    //but get it from a global 'React' variable
+    'react': 'React',
+    'react-dom': 'ReactDOM',
+    'd3': 'd3'
+  },
+
   plugins: ENV ? [
     new webpack.optimize.UglifyJsPlugin({
       sourceMap: false,

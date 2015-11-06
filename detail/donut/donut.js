@@ -1,6 +1,7 @@
 "use strict";
 
 var React = require('react');
+var ReactDOM = require('react-dom');
 var Chart = require('react-d3-core').Chart;
 var PieChart = require('react-d3-basic').PieChart;
 
@@ -16,7 +17,6 @@ var PieChart = require('react-d3-basic').PieChart;
     svgClassName = "test-chart-class",
     titleClassName = "test-chart-title-class",
     legendClassName = "test-legend",
-    showLegend = false,
     value = function(d) {
       return +d.population;
     },
@@ -54,7 +54,7 @@ var PieChart = require('react-d3-basic').PieChart;
     innerRadius = 20;
 
 
-  React.render(
+  ReactDOM.render(
     <Chart
       title={title}
       id={id}
@@ -75,7 +75,6 @@ var PieChart = require('react-d3-basic').PieChart;
         legendClassName= {legendClassName}
         legendPosition= {legendPosition}
         categoricalColors= {d3.scale.category10()}
-        showLegend= {showLegend}
         value = {value}
         name = {name}
         outerRadius= {outerRadius}

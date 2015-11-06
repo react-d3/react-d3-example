@@ -18,8 +18,6 @@ var LineChart = require('react-d3-basic').LineChart;
     title = "Taiwan refuse disposal",
     svgClassName = "simple-line-chart",
     titleClassName = "test-chart-title-class",
-    // show legend or not
-    showLegend = true,
     // show xaxis or not
     showXAxis = true,
     // show yaxis or not
@@ -80,7 +78,6 @@ var LineChart = require('react-d3-basic').LineChart;
         yAxisClassName={yAxisClassName}
         xAxisClassName={xAxisClassName}
         chartSeries={chartSeries}
-        showLegend={showLegend}
         showXAxis={showXAxis}
         showYAxis={showYAxis}
         x={x}

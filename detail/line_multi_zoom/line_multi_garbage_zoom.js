@@ -1,6 +1,7 @@
 "use strict"
 
 var React = require('react');
+var ReactDOM = require('react-dom');
 var LineZoom = require('react-d3-zoom').LineZoom;
 
 (function() {
@@ -17,8 +18,6 @@ var LineZoom = require('react-d3-zoom').LineZoom;
     title = "Taiwan refuse disposal - Multi line",
     svgClassName = "simple-area-chart",
     titleClassName = "test-chart-title-class",
-    // show legend or not
-    showLegend = true,
     // show xaxis or not
     showXAxis = true,
     // show yaxis or not
@@ -69,7 +68,7 @@ var LineZoom = require('react-d3-zoom').LineZoom;
     yLabel = "Amount",
     categoricalColors= d3.scale.category10()
 
-  React.render(
+  ReactDOM.render(
     <LineZoom
       title= {title}
       data= {chartData}
@@ -82,7 +81,6 @@ var LineZoom = require('react-d3-zoom').LineZoom;
       yAxisClassName= {yAxisClassName}
       xAxisClassName= {xAxisClassName}
       chartSeries= {chartSeries}
-      showLegend= {showLegend}
       showXAxis= {showXAxis}
       showYAxis= {showYAxis}
       x= {x}

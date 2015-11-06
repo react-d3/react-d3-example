@@ -18,7 +18,6 @@ var AreaStackZoom = require('react-d3-zoom').AreaStackZoom;
     titleClassName = "test-chart-title-class",
     legendClassName = "test-legend",
     legendPosition = "right",
-    showLegend = true,
     showXAxis = true,
     showYAxis = true,
     chartSeries = [

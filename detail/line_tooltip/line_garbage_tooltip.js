@@ -1,6 +1,7 @@
 "use strict"
 
 var React = require('react');
+var ReactDOM = require('react-dom');
 var LineTooltip = require('react-d3-tooltip').LineTooltip;
 
 (function() {
@@ -16,8 +17,6 @@ var LineTooltip = require('react-d3-tooltip').LineTooltip;
     title = "Taiwan refuse disposal",
     svgClassName = "simple-line-chart",
     titleClassName = "test-chart-title-class",
-    // show legend or not
-    showLegend = true,
     // show xaxis or not
     showXAxis = true,
     // show yaxis or not
@@ -59,7 +58,7 @@ var LineTooltip = require('react-d3-tooltip').LineTooltip;
     yLabelPosition = 'left',
     yLabel = "Amount";
 
-  React.render(
+  ReactDOM.render(
       <LineTooltip
         title= {title}
         data= {chartData}
@@ -72,7 +71,6 @@ var LineTooltip = require('react-d3-tooltip').LineTooltip;
         yAxisClassName= {yAxisClassName}
         xAxisClassName= {xAxisClassName}
         chartSeries= {chartSeries}
-        showLegend= {showLegend}
         showXAxis= {showXAxis}
         showYAxis= {showYAxis}
         x= {x}

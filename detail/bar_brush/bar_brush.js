@@ -1,6 +1,7 @@
 "use strict";
 
 var React = require('react');
+var ReactDOM = require('react-dom');
 var BarBrush = require('react-d3-brush').BarBrush;
 
 (function() {
@@ -15,7 +16,6 @@ var BarBrush = require('react-d3-brush').BarBrush;
     titleClassName = "test-chart-title-class",
     legendClassName = "test-legend",
     legendPosition = "right",
-    showLegend = true,
     showXAxis = true,
     showYAxis = true,
     chartSeries = [
@@ -50,7 +50,7 @@ var BarBrush = require('react-d3-brush').BarBrush;
     // your brush height
     brushHeight = 100;
 
-  React.render(
+  ReactDOM.render(
       <BarBrush
         title= {title}
         data= {generalChartData}
@@ -66,7 +66,6 @@ var BarBrush = require('react-d3-brush').BarBrush;
         legendPosition= {legendPosition}
         categoricalColors= {d3.scale.category10()}
         chartSeries = {chartSeries}
-        showLegend= {showLegend}
         showXAxis= {showXAxis}
         showYAxis= {showYAxis}
         x= {x}

@@ -1,6 +1,7 @@
 "use strict";
 
 var React = require('react');
+var ReactDOM = require('react-dom');
 var Legend = require('react-d3-core').Legend;
 
 (function() {
@@ -78,8 +79,7 @@ var Legend = require('react-d3-core').Legend;
       var newSeries = expend? chartSeries: chartSeries2;
 
       return (
-        <svg width={width} height={height} onClick={this._onClick}>
-          <rect height= {"100%"} width= {"100%"} fill= {"#CCC"} />
+        <div onClick= {this._onClick}>
           <Legend
             width= {newWidth}
             height= {height}
@@ -89,12 +89,12 @@ var Legend = require('react-d3-core').Legend;
             legendOffset= {legendOffset}
             chartSeries = {newSeries}
           />
-        </svg>
+        </div>
       )
     }
   })
 
-  React.render(
+  ReactDOM.render(
     <ClickAxis />
   , document.getElementById('click-legend')
   )

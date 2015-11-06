@@ -1,6 +1,7 @@
 "use strict"
 
 var React = require('react');
+var ReactDOM = require('react-dom');
 var Chart = require('react-d3-core').Chart;
 var ScatterPlot = require('react-d3-basic').ScatterPlot;
 
@@ -18,8 +19,6 @@ var ScatterPlot = require('react-d3-basic').ScatterPlot;
     title = "Taiwan refuse disposal - Multi line",
     svgClassName = "simple-area-chart",
     titleClassName = "test-chart-title-class",
-    // show legend or not
-    showLegend = true,
     // show xaxis or not
     showXAxis = true,
     // show yaxis or not
@@ -75,7 +74,7 @@ var ScatterPlot = require('react-d3-basic').ScatterPlot;
     yLabel = "Amount",
     categoricalColors= d3.scale.category10()
 
-  React.render(
+  ReactDOM.render(
     <Chart
       title={title}
       id={id}
@@ -94,7 +93,6 @@ var ScatterPlot = require('react-d3-basic').ScatterPlot;
         yAxisClassName= {yAxisClassName}
         xAxisClassName= {xAxisClassName}
         chartSeries= {chartSeries}
-        showLegend= {showLegend}
         showXAxis= {showXAxis}
         showYAxis= {showYAxis}
         x= {x}

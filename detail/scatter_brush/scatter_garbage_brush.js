@@ -1,6 +1,7 @@
 "use strict"
 
 var React = require('react');
+var ReactDOM = require('react-dom');
 var ScatterBrush = require('react-d3-brush').ScatterBrush;
 
 (function() {
@@ -17,8 +18,6 @@ var ScatterBrush = require('react-d3-brush').ScatterBrush;
     title = "Taiwan refuse disposal - Multi line",
     svgClassName = "simple-area-chart",
     titleClassName = "test-chart-title-class",
-    // show legend or not
-    showLegend = true,
     // show xaxis or not
     showXAxis = true,
     // show yaxis or not
@@ -58,7 +57,7 @@ var ScatterBrush = require('react-d3-brush').ScatterBrush;
     xScale = 'time',
     xAxisClassName = 'x-axis',
     xLabel = "Month",
-    xLabelPosition = "left",
+    xLabelPosition = "bottom",
     // your y accessor
     y = function(d) {
       return +d;
@@ -76,7 +75,7 @@ var ScatterBrush = require('react-d3-brush').ScatterBrush;
     // your brush height
     brushHeight = 100;
 
-  React.render(
+  ReactDOM.render(
       <ScatterBrush
         title= {title}
         data= {chartData}
@@ -89,7 +88,6 @@ var ScatterBrush = require('react-d3-brush').ScatterBrush;
         yAxisClassName= {yAxisClassName}
         xAxisClassName= {xAxisClassName}
         chartSeries= {chartSeries}
-        showLegend= {showLegend}
         showXAxis= {showXAxis}
         showYAxis= {showYAxis}
         x= {x}

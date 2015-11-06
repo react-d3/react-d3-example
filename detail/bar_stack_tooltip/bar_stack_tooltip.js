@@ -1,6 +1,7 @@
 "use strict";
 
 var React = require('react');
+var ReactDOM = require('react-dom');
 var BarStackTooltip = require('react-d3-tooltip').BarStackTooltip;
 
 (function() {
@@ -23,7 +24,6 @@ var BarStackTooltip = require('react-d3-tooltip').BarStackTooltip;
     titleClassName = "test-chart-title-class",
     legendClassName = "test-legend",
     legendPosition = "right",
-    showLegend = true,
     showXAxis = true,
     showYAxis = true,
     showXGrid = true,
@@ -90,7 +90,7 @@ var BarStackTooltip = require('react-d3-tooltip').BarStackTooltip;
     yOuterTickSize = 6
 
 
-  React.render(
+  ReactDOM.render(
       <BarStackTooltip
         title= {title}
         data= {generalChartData}
@@ -106,7 +106,6 @@ var BarStackTooltip = require('react-d3-tooltip').BarStackTooltip;
         legendPosition= {legendPosition}
         categoricalColors= {d3.scale.category10()}
         chartSeries = {chartSeries}
-        showLegend= {showLegend}
         showXAxis= {showXAxis}
         showYAxis= {showYAxis}
         x= {x}

@@ -1,4 +1,5 @@
 var React = require('react');
+var ReactDOM = require('react-dom');
 var Grid = require('react-d3-core').Grid;
 
 (function() {
@@ -23,7 +24,7 @@ var Grid = require('react-d3-core').Grid;
     xScale = 'linear';
 
 
-  React.render(
+  ReactDOM.render(
     <svg width={width} height={height}>
       <Grid
         width= {width}

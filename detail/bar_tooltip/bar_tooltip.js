@@ -1,6 +1,7 @@
 "use strict";
 
 var React = require('react');
+var ReactDOM = require('react-dom');
 var BarTooltip = require('react-d3-tooltip').BarTooltip;
 
 (function() {
@@ -15,7 +16,6 @@ var BarTooltip = require('react-d3-tooltip').BarTooltip;
     titleClassName = "test-chart-title-class",
     legendClassName = "test-legend",
     legendPosition = "right",
-    showLegend = true,
     showXAxis = true,
     showYAxis = true,
     chartSeries = [
@@ -48,7 +48,7 @@ var BarTooltip = require('react-d3-tooltip').BarTooltip;
     yTicks = [10, "%"],
     yLabelPosition = 'left';
 
-  React.render(
+  ReactDOM.render(
       <BarTooltip
         title= {title}
         data= {generalChartData}
@@ -64,7 +64,6 @@ var BarTooltip = require('react-d3-tooltip').BarTooltip;
         legendPosition= {legendPosition}
         categoricalColors= {d3.scale.category10()}
         chartSeries = {chartSeries}
-        showLegend= {showLegend}
         showXAxis= {showXAxis}
         showYAxis= {showYAxis}
         x= {x}

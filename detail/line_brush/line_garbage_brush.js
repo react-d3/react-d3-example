@@ -17,8 +17,6 @@ var LineBrush = require('react-d3-brush').LineBrush;
     title = "Taiwan refuse disposal",
     svgClassName = "simple-line-chart",
     titleClassName = "test-chart-title-class",
-    // show legend or not
-    showLegend = true,
     // show xaxis or not
     showXAxis = true,
     // show yaxis or not
@@ -75,7 +73,6 @@ var LineBrush = require('react-d3-brush').LineBrush;
         yAxisClassName= {yAxisClassName}
         xAxisClassName= {xAxisClassName}
         chartSeries= {chartSeries}
-        showLegend= {showLegend}
         showXAxis= {showXAxis}
         showYAxis= {showYAxis}
         x= {x}

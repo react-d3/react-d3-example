@@ -1,6 +1,7 @@
 "use strict";
 
 var React = require('react');
+var ReactDOM = require('react-dom');
 var Yaxis = require('react-d3-core').Yaxis;
 
 (function() {
@@ -29,7 +30,7 @@ var Yaxis = require('react-d3-core').Yaxis;
     yOrient = "right",
     yTickOrient = "left";
 
-  React.render(
+  ReactDOM.render(
     <svg width={width} height={height}>
       <Yaxis
         width= {width}

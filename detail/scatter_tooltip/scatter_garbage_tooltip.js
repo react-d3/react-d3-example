@@ -1,6 +1,7 @@
 "use strict"
 
 var React = require('react');
+var ReactDOM = require('react-dom');
 var ScatterTooltip = require('react-d3-tooltip').ScatterTooltip;
 
 (function() {
@@ -17,8 +18,6 @@ var ScatterTooltip = require('react-d3-tooltip').ScatterTooltip;
     title = "Taiwan refuse disposal - Multi line",
     svgClassName = "simple-area-chart",
     titleClassName = "test-chart-title-class",
-    // show legend or not
-    showLegend = true,
     // show xaxis or not
     showXAxis = true,
     // show yaxis or not
@@ -74,7 +73,7 @@ var ScatterTooltip = require('react-d3-tooltip').ScatterTooltip;
     yLabel = "Amount",
     categoricalColors= d3.scale.category10()
 
-  React.render(
+  ReactDOM.render(
       <ScatterTooltip
         title= {title}
         data= {chartData}
@@ -87,7 +86,6 @@ var ScatterTooltip = require('react-d3-tooltip').ScatterTooltip;
         yAxisClassName= {yAxisClassName}
         xAxisClassName= {xAxisClassName}
         chartSeries= {chartSeries}
-        showLegend= {showLegend}
         showXAxis= {showXAxis}
         showYAxis= {showYAxis}
         x= {x}

@@ -1,6 +1,7 @@
 "use strict";
 
 var React = require('react');
+var ReactDOM = require('react-dom');
 var BarStackZoom = require('react-d3-zoom').BarStackZoom;
 
 (function() {
@@ -26,7 +27,6 @@ var BarStackZoom = require('react-d3-zoom').BarStackZoom;
     titleClassName = "test-chart-title-class",
     legendClassName = "test-legend",
     legendPosition = 'right',
-    showLegend = true,
     showXAxis = true,
     showYAxis = true,
     showXGrid = true,
@@ -103,7 +103,7 @@ var BarStackZoom = require('react-d3-zoom').BarStackZoom;
     yOuterTickSize = 6
 
 
-  React.render(
+  ReactDOM.render(
     <BarStackZoom
       title= {title}
       data= {generalChartData}
@@ -119,7 +119,6 @@ var BarStackZoom = require('react-d3-zoom').BarStackZoom;
       legendPosition= {legendPosition}
       categoricalColors= {d3.scale.category10()}
       chartSeries = {chartSeries}
-      showLegend= {showLegend}
       showXAxis= {showXAxis}
       showYAxis= {showYAxis}
       x= {x}

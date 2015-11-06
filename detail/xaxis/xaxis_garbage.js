@@ -1,6 +1,7 @@
 "use strict";
 
 var React = require('react');
+var ReactDOM = require('react-dom');
 var Xaxis = require('react-d3-core').Xaxis;
 
 (function() {
@@ -28,7 +29,7 @@ var Xaxis = require('react-d3-core').Xaxis;
     // set your label name
     xLabel = "Month";
 
-  React.render(
+  ReactDOM.render(
     <svg width={width} height={height}>
       <Xaxis
         width= {width}

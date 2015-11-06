@@ -1,6 +1,7 @@
 "use strict";
 
 var React = require('react');
+var ReactDOM = require('react-dom');
 var PieTooltip = require('react-d3-tooltip').PieTooltip;
 
 (function() {
@@ -16,8 +17,6 @@ var PieTooltip = require('react-d3-tooltip').PieTooltip;
     svgClassName = "test-chart-class",
     titleClassName = "test-chart-title-class",
     legendClassName = "test-legend",
-    // show legend or not
-    showLegend = true,
     // value accessor
     value = function(d) {
       return +d.population;
@@ -63,7 +62,7 @@ var PieTooltip = require('react-d3-tooltip').PieTooltip;
     pieSort = d3.descending;
 
 
-  React.render(
+  ReactDOM.render(
     <PieTooltip
       title= {title}
       data= {generalChartData}
@@ -78,7 +77,6 @@ var PieTooltip = require('react-d3-tooltip').PieTooltip;
       legendClassName= {legendClassName}
       legendPosition= {legendPosition}
       categoricalColors= {d3.scale.category10()}
-      showLegend= {showLegend}
       value = {value}
       name = {name}
       outerRadius= {outerRadius}

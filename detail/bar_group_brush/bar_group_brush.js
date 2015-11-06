@@ -1,6 +1,7 @@
 "use strict";
 
 var React = require('react');
+var ReactDOM = require('react-dom');
 var BarGroupBrush = require('react-d3-brush').BarGroupBrush;
 
 (function() {
@@ -25,7 +26,6 @@ var BarGroupBrush = require('react-d3-brush').BarGroupBrush;
     legendClassName = "test-legend",
     legendPosition = 'right',
     labelOffset = 30,
-    showLegend = true,
     showXAxis = true,
     showYAxis = true,
     // what fields you want to build in the chart
@@ -96,7 +96,7 @@ var BarGroupBrush = require('react-d3-brush').BarGroupBrush;
     // your brush height
     brushHeight = 100;
 
-  React.render(
+  ReactDOM.render(
     <BarGroupBrush
       title= {title}
       data= {generalChartData}
@@ -113,7 +113,6 @@ var BarGroupBrush = require('react-d3-brush').BarGroupBrush;
       legendPosition= {legendPosition}
       categoricalColors= {categoricalColors}
       chartSeries = {chartSeries}
-      showLegend= {showLegend}
       showXAxis= {showXAxis}
       showYAxis= {showYAxis}
       x= {x}

@@ -1,6 +1,7 @@
 "use strict"
 
 var React = require('react');
+var ReactDOM = require('react-dom');
 var LineBrush = require('react-d3-brush').LineBrush;
 
 (function() {
@@ -17,8 +18,6 @@ var LineBrush = require('react-d3-brush').LineBrush;
     title = "Taiwan refuse disposal - Multi line",
     svgClassName = "simple-area-chart",
     titleClassName = "test-chart-title-class",
-    // show legend or not
-    showLegend = true,
     // show xaxis or not
     showXAxis = true,
     // show yaxis or not
@@ -72,7 +71,7 @@ var LineBrush = require('react-d3-brush').LineBrush;
     brushHeight = 100;
 
 
-  React.render(
+  ReactDOM.render(
       <LineBrush
         title= {title}
         data= {chartData}
@@ -85,7 +84,6 @@ var LineBrush = require('react-d3-brush').LineBrush;
         yAxisClassName= {yAxisClassName}
         xAxisClassName= {xAxisClassName}
         chartSeries= {chartSeries}
-        showLegend= {showLegend}
         showXAxis= {showXAxis}
         showYAxis= {showYAxis}
         x= {x}

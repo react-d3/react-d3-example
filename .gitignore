@@ -1,4 +1,5 @@
 node_modules
 dist/detail/origin
 dist/simple/origin
+dist/map_detail/origin
 npm_debug.log

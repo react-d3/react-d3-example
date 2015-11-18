@@ -14,9 +14,12 @@
     "react-d3-basic": "^0.12.0",
     "react-d3-brush": "^0.9.0",
     "react-d3-core": "^0.9.0",
+    "react-d3-map-bubble": "^0.5.1",
+    "react-d3-map-choropleth": "^0.4.0",
     "react-d3-tooltip": "^1.1.0",
     "react-d3-zoom": "^0.6.0",
-    "react-dom": "^0.14.2"
+    "react-dom": "^0.14.2",
+    "topojson": "^1.6.19"
   },
   "peerDependencies": {
     "react": "^0.14.2"

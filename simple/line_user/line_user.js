@@ -26,12 +26,9 @@ var LineChart = require('react-d3-basic').LineChart;
     ],
     // your x accessor
     x = function(d) {
-      console.log(d)
       return d.index;
-    },
-    xScale = 'index';
+    }
 
-  console.log('hi')
   ReactDOM.render(
     <Chart
       title={title}
@@ -47,7 +44,6 @@ var LineChart = require('react-d3-basic').LineChart;
         height={height}
         chartSeries={chartSeries}
         x={x}
-        xScale={xScale}
       />
     </Chart>
   , document.getElementById('line-user')

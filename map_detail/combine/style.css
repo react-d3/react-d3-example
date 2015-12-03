@@ -2,6 +2,11 @@
   fill-opacity: .5
 }
 
+.polygon_active {
+  fill-opacity: 1 !important;
+  fill: red !important;
+}
+
 #map {
   float: left;
 }
@@ -11,5 +16,10 @@
 }
 
 .polygon:hover {
-  fill: red
+  fill: blue !important;
+  fill-opacity: .3 !important;
+}
+
+.axis.x text {
+  transform: rotate(45deg) !important;
 }

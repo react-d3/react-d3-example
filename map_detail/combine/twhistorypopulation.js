@@ -9,7 +9,7 @@ var Polygon = require('react-d3-map-core').Polygon;
 var Tile = require('react-d3-map-core').Tile;
 var Mesh = require('react-d3-map-core').Mesh;
 
-var LineBrush = require('react-d3-brush').LineBrush;
+var LineChart = require('react-d3-basic').LineChart;
 
 var projectionFunc = require('react-d3-map-core').projection;
 var geoPath = require('react-d3-map-core').geoPath;
@@ -57,7 +57,7 @@ var css= require('./style.css');
   })
 
 
-  var BrushChart = React.createClass({
+  var TooltipChart = React.createClass({
     getInitialState: function() {
       return null
     },
@@ -73,15 +73,18 @@ var css= require('./style.css');
             name: 'Population',
             color: '#ff7f0e',
             style: {
-              "stroke-width": 2,
-              "stroke-opacity": .2,
+              "stroke-width": 4,
+              "stroke-opacity": .8,
               "fill-opacity": .2
             }
           }
         ],
         x = function(d) {
-          console.log(parseDate.parse(1911 + d.time))
           return parseDate.parse((1911 + d.time).toString());
+        },
+        xScale= 'time',
+        y = function(d) {
+          return +d;
         }
 
       var valArr = []
@@ -102,16 +105,28 @@ var css= require('./style.css');
           }
         }
       }
-
+      var margins = {left: 100, right: 100, top: 50, bottom: 50};
       return (
-        <LineBrush
+        <Chart
           width= {600}
           height= {500}
-          brushHeight={100}
-          data= {valArr}
+          margins= {margins}
+          title= {county}
           chartSeries= {chartSeries}
-          x= {x}
-        />
+        >
+          <LineChart
+            title= {county}
+            showXGrid= {false}
+            showYGrid= {false}
+            width= {600}
+            height= {500}
+            data= {valArr}
+            chartSeries= {chartSeries}
+            x= {x}
+            xScale= {xScale}
+            y= {y}
+          />
+        </Chart>
       )
     }
   })
@@ -119,11 +134,11 @@ var css= require('./style.css');
   var Map = React.createClass({
     getInitialState: function() {
       return {
-        county: null
+        county: '桃園縣/中壢市'
       }
     },
 
-    mouseOver: function(dom, d, i) {
+    click: function(dom, d, i) {
       var county = d.properties.name;
 
       this.setState({
@@ -134,23 +149,32 @@ var css= require('./style.css');
     render: function() {
 
       var county = this.state.county;
-      var mouseOver = this.mouseOver;
+      var click = this.click;
       var brush;
+      var polygonClass;
 
       var polygons = dataCounties.map(function(d, i) {
+        var name = d.properties.name;
+        if(name === county) {
+          polygonClass = 'polygon_active'
+        } else {
+          polygonClass = 'polygon_inactive'
+        }
+
         return (
           <Polygon
             key= {i}
             data= {d}
+            polygonClass= {polygonClass}
             geoPath= {geo}
-            onMouseOver= {mouseOver}
+            onClick= {click}
           />
         )
       })
 
       if(county) {
         brush= (
-          <BrushChart county= {county}/>
+          <TooltipChart county= {county}/>
         )
       }
 
@@ -163,13 +187,13 @@ var css= require('./style.css');
           >
             {polygons}
           </svg>
-          <svg
+          <div
             id="chart"
             width= {width}
             height= {height}
           >
             {brush}
-          </svg>
+          </div>
         </div>
       )
     }

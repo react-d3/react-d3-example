@@ -19,7 +19,9 @@ module.exports = [{
     earthquake: js_root_detail + 'bubble/earthquake/earthquake.js',
     mapbubble: js_root_detail + 'bubble/mapbubble/mapbubble.js',
     twpopulation: js_root_detail + 'choropleth/tw/twpopulation.js',
-    unemployment: js_root_detail + 'choropleth/us/unemployment.js'
+    unemployment: js_root_detail + 'choropleth/us/unemployment.js',
+    historytwpopulation: js_root_detail + 'combine/twhistorypopulation.js'
+
   },
 
   output: {

@@ -1,0 +1,15 @@
+.polygon {
+  fill-opacity: .5
+}
+
+#map {
+  float: left;
+}
+
+#chart {
+  float: left;
+}
+
+.polygon:hover {
+  fill: red
+}

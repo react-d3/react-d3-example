@@ -20,6 +20,7 @@ module.exports = [{
   entry: {
     donut: js_root_simple + 'donut/donut.js',
     line_garbage: js_root_simple + 'line/line_garbage.js',
+    line_user: js_root_simple + 'line_user/line_user.js',
     line_garbage_tooltip: js_root_simple + 'line_tooltip/line_garbage_tooltip.js',
     line_garbage_brush: js_root_simple + 'line_brush/line_garbage_brush.js',
     line_garbage_zoom: js_root_simple + 'line_zoom/line_garbage_zoom.js',

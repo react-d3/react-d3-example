@@ -7,7 +7,7 @@ var PieTooltip = require('react-d3-tooltip').PieTooltip;
 (function() {
   var generalChartData = require('dsv?delimiter=,!../data/pie_test.csv')
 
-  var width = 700,
+  var width = 500,
     height = 300,
     title = "Pie Chart With Tooltip",
     // value accessor

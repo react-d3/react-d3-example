@@ -11,7 +11,7 @@ var LineChart = require('react-d3-basic').LineChart;
   // your date format, use for parsing
   var parseDate = d3.time.format("%YM%m").parse;
 
-  var width = 700,
+  var width = 500,
     height = 300,
     margins = {left: 100, right: 100, top: 50, bottom: 50},
     title = "Taiwan refuse disposal",

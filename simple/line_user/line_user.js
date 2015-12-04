@@ -9,7 +9,7 @@ var LineChart = require('react-d3-basic').LineChart;
   // load your general data
   var chartData = require('json!../data/user_sample.json');
 
-  var width = 800,
+  var width = 700,
     height = 300,
     margins = {left: 100, right: 100, top: 50, bottom: 50},
     title = "User sample",

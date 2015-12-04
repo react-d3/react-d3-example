@@ -8,7 +8,7 @@ var BarGroupBrush = require('react-d3-brush').BarGroupBrush;
   // loading data
   var generalChartData = require('dsv?delimiter=,!../data/age.csv')
 
-  var width = 700,
+  var width = 500,
     height = 300,
     title = "Bar Group Chart With Brush",
     // what fields you want to build in the chart

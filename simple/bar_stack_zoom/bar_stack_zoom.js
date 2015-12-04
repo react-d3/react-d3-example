@@ -8,7 +8,7 @@ var BarStackZoom = require('react-d3-zoom').BarStackZoom;
   // loading data
   var generalChartData = require('dsv?delimiter=,!../data/age.csv')
 
-  var width = 700,
+  var width = 500,
     height = 400,
     title = "Bar Stack Chart With Zoom",
     // what fields you want to build in the chart

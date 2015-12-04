@@ -20,8 +20,10 @@ module.exports = [{
     mapbubble: js_root_detail + 'bubble/mapbubble/mapbubble.js',
     twpopulation: js_root_detail + 'choropleth/tw/twpopulation.js',
     unemployment: js_root_detail + 'choropleth/us/unemployment.js',
-    historytwpopulation: js_root_detail + 'combine/twhistorypopulation.js'
-
+    historytwpopulation: js_root_detail + 'combine/twhistorypopulation.js',
+    interactive_line: js_root_detail + 'interactive/line/line.js',
+    interactive_marker: js_root_detail + 'interactive/marker/marker.js',
+    interactive_polygon: js_root_detail + 'interactive/multipolygon/multipolygon.js'
   },
 
   output: {
@@ -45,14 +47,6 @@ module.exports = [{
 
   resolve: {
     extensions: ['', '.webpack.js', '.web.js', '.js', '.jsx']
-  },
-
-  externals: ENV ? {}: {
-    //don't bundle the 'react' npm package with our bundle.js
-    //but get it from a global 'React' variable
-    'react': 'React',
-    'react-dom': 'ReactDOM',
-    'd3': 'd3'
   },
 
   plugins: ENV ? [

@@ -31,3 +31,11 @@ circle:hover {
   font: 10px sans-serif;
   text-anchor: middle;
 }
+
+.polygon {
+  fill: #CCC !important;
+}
+
+.mesh {
+  stroke: #EEE !important;
+}

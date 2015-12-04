@@ -10,8 +10,8 @@ var css= require('../css/twpopulation.css');
 
 // Example
 (function() {
-  var width = 960,
-  height = 800;
+  var width = 700,
+  height = 500;
 
   var topodata = require('json!../data/twTown1982.topo.json');
   var population = require('json!../data/population.json')['102']
@@ -48,8 +48,8 @@ var css= require('../css/twpopulation.css');
   var domainKey = function(d) {return d.region};
   var mapKey = function(d) {return d.properties.name.trim()};
 
-  var scale = 10000;
-  var center = [120.979531, 23.978567];
+  var scale = 7000;
+  var center = [122, 23.5];
   var projection = 'mercator';
 
   var tooltipContent = function(d) { return d.properties;}

@@ -11,7 +11,7 @@ var css= require('../css/bubble.css');
 // http://bl.ocks.org/mbostock/9943478
 (function() {
   var width = 960,
-  height = 600;
+  height = 700;
 
   var us = require('json!../data/us.json');
 

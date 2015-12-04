@@ -10,8 +10,8 @@ var css= require('../css/unemployment.css');
 // Example
 // http://bl.ocks.org/mbostock/4060606
 (function() {
-  var width = 960,
-  height = 600;
+  var width = 700,
+  height = 500;
 
   var topodata = require('json!../data/us.json');
   var unemploy = require('dsv?delimiter=\t!../data/unemployment.tsv')
@@ -31,7 +31,7 @@ var css= require('../css/unemployment.css');
   var domainKey = function(d) {return +d.id};
   var mapKey = function(d) {return +d.id};
 
-  var scale = 1280;
+  var scale = 1000;
   var translate = [width / 2, height / 2];
   var projection = 'albersUsa';
 

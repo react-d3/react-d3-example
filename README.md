@@ -23,3 +23,9 @@ for production mode:
 ```
 NODE_ENV=1 webpack
 ```
+
+- `webpack.map.config.js` map webpack.
+
+- `webpack.config.js` chart with detail configuration.
+
+- `webpack.simple.config.js` chart with simple configuration.

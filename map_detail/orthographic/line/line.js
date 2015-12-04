@@ -6,7 +6,7 @@ var MapOrthographic = require('react-d3-map-orthographic').MapOrthographic;
 
 var LineGroup = require('react-d3-map').LineGroup;
 
-var css= require('../css/polygon.css');
+var css= require('../css/mesh.css');
 
 // Example
 (function() {

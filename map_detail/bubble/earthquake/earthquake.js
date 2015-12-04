@@ -10,8 +10,8 @@ var css= require('../css/bubble.css');
 
 // Example
 (function() {
-  var width = 600,
-  height = 600;
+  var width = 700,
+  height = 700;
 
   var world = require('json!../data/world-50m.json');
   var earthquake = require('json!../data/earthquake.json');

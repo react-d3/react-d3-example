@@ -5,9 +5,3 @@
   fill-opacity: .3;
   pointer-events: all;
 }
-
-.mesh {
-  stroke: red !important;
-  stroke-width: 3 !important;
-  pointer-events: all;
-}

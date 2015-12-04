@@ -32,10 +32,10 @@ circle:hover {
   text-anchor: middle;
 }
 
-.polygon {
+.polygon-bubble {
   fill: #CCC !important;
 }
 
-.mesh {
+.mesh-bubble {
   stroke: #EEE !important;
 }

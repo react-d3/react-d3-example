@@ -7,15 +7,15 @@ var topojson = require('topojson');
 var Map = require('react-d3-map').Map;
 var MarkerGroup = require('react-d3-map').MarkerGroup;
 
-var css= require('../css/polygon.css');
+// var css= require('../css/polygon.css');
 
 // Example
 (function() {
-  var width = 1000;
-  var height = 800;
+  var width = 700;
+  var height = 700;
   var scale = 1200 * 5;
   var scaleExtent = [1 << 12, 1 << 13]
-  var center = [-5, 55.4];
+  var center = [-4, 55.4];
   var uk = require('json!../data/uk.json');
   var data = topojson.feature(uk, uk.objects.places);
   var popupContent = function(d) { return d.properties.name; }

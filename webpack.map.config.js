@@ -23,7 +23,10 @@ module.exports = [{
     historytwpopulation: js_root_detail + 'combine/twhistorypopulation.js',
     interactive_line: js_root_detail + 'interactive/line/line.js',
     interactive_marker: js_root_detail + 'interactive/marker/marker.js',
-    interactive_polygon: js_root_detail + 'interactive/multipolygon/multipolygon.js'
+    interactive_polygon: js_root_detail + 'interactive/multipolygon/multipolygon.js',
+    ortho_line: js_root_detail + 'orthographic/line/line.js',
+    ortho_marker: js_root_detail + 'orthographic/marker/marker.js',
+    ortho_polygon: js_root_detail + 'orthographic/multipolygon/multipolygon.js'
   },
 
   output: {

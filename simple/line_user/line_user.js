@@ -37,6 +37,8 @@ var LineChart = require('react-d3-basic').LineChart;
       margins= {margins}
       >
       <LineChart
+        showXGrid= {false}
+        showYGrid= {false}
         margins= {margins}
         title={title}
         data={chartData}

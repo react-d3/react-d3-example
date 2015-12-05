@@ -9,8 +9,8 @@ var css= require('../css/polygon.css');
 
 // Example
 (function() {
-  var width = 1000;
-  var height = 800;
+  var width = 700;
+  var height = 700;
   var scale = 1 << 22;
   var scaleExtent = [1 << 20, 1 << 24]
   var center = [-122.486052, 37.830348];

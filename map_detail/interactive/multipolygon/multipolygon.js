@@ -12,8 +12,8 @@ var css= require('../css/polygon.css');
 
 // Example
 (function() {
-  var width = 1000;
-  var height = 800;
+  var width = 700;
+  var height = 700;
   var scale = 1 << 12;
   var scaleExtent = [1 << 10, 1 << 14]
   var center = [-100.95, 40.7];

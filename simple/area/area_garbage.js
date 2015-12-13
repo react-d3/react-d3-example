@@ -1,9 +1,9 @@
 "use strict"
 
+var d3 = require('d3');
 var React = require('react');
-var ReactDOM = require('react-dom')
-var Chart = require('react-d3-core').Chart;
-var LineChart = require('react-d3-basic').LineChart;
+var ReactDOM = require('react-dom');
+var AreaChart = require('react-d3-basic').AreaChart;
 
 (function() {
   // load your general data
@@ -14,13 +14,11 @@ var LineChart = require('react-d3-basic').LineChart;
 
   var width = 700,
     height = 300,
-    title = "Taiwan refuse disposal - Incineration",
     chartSeries = [
       {
         field: 'incineration',
         name: 'Incineration',
         color: 'blue',
-        area: true,
         style: {
           opacity: .2
         }
@@ -31,25 +29,18 @@ var LineChart = require('react-d3-basic').LineChart;
       return parseDate(d.month);
     },
     xScale = 'time',
-    yTickOrient = 'right'
+    yTickOrient = 'right';
 
   ReactDOM.render(
-    <Chart
-      title={title}
-      width={width}
-      height={height}
-      >
-      <LineChart
-        title= {title}
-        data= {chartData}
-        width= {width}
-        height= {height}
-        chartSeries= {chartSeries}
-        x= {x}
-        xScale= {xScale}
-        yTickOrient= {yTickOrient}
-      />
-    </Chart>
+    <AreaChart
+      data= {chartData}
+      width= {width}
+      height= {height}
+      chartSeries= {chartSeries}
+      x= {x}
+      xScale= {xScale}
+      yTickOrient= {yTickOrient}
+    />
   , document.getElementById('area-garbage')
   )
 })()

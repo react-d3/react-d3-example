@@ -2,7 +2,6 @@
 
 var React = require('react');
 var ReactDOM = require('react-dom');
-var Chart = require('react-d3-core').Chart;
 var BarGroupChart = require('react-d3-basic').BarGroupChart;
 
 (function() {
@@ -10,7 +9,6 @@ var BarGroupChart = require('react-d3-basic').BarGroupChart;
 
   var width = 700,
     height = 400,
-    title = "Bar Group Chart",
     chartSeries = [
       {
         field: 'Under 5 Years',
@@ -52,25 +50,18 @@ var BarGroupChart = require('react-d3-basic').BarGroupChart;
     yTickFormat = d3.format(".2s");
 
   ReactDOM.render(
-    <Chart
-      title={title}
-      width={width}
-      height={height}
-      >
-      <BarGroupChart
-        title= {title}
-        data= {generalChartData}
-        width= {width}
-        height= {height}
-        chartSeries = {chartSeries}
-        x= {x}
-        xScale= {xScale}
-        xLabel = {xLabel}
-        yTickFormat= {yTickFormat}
-        yLabelPosition= {yLabelPosition}
-        yLabel = {yLabel}
-      />
-    </Chart>
+    <BarGroupChart
+      data= {generalChartData}
+      width= {width}
+      height= {height}
+      chartSeries = {chartSeries}
+      x= {x}
+      xScale= {xScale}
+      xLabel = {xLabel}
+      yTickFormat= {yTickFormat}
+      yLabelPosition= {yLabelPosition}
+      yLabel = {yLabel}
+    />
   , document.getElementById('data_bar_group')
   )
 })()
